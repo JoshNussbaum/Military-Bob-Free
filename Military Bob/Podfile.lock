@@ -1,0 +1,15 @@
+PODS:
+  - gtm-oauth (0.0.1):
+    - gtm-oauth/nibs (= 0.0.1)
+  - gtm-oauth/nibs (0.0.1)
+  - snowshoe (1.11):
+    - gtm-oauth
+
+DEPENDENCIES:
+  - snowshoe (~> 1.11)
+
+SPEC CHECKSUMS:
+  gtm-oauth: 34a7210eb8e2dd00a977f42af7d99f994c1e7917
+  snowshoe: a552178bc8d5cf4cdbe561e411ff31a845810726
+
+COCOAPODS: 0.35.0

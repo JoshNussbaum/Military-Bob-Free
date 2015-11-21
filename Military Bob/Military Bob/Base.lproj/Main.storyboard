@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BV1-FR-VrT">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="maK-i9-Uhn"/>
+                        <viewControllerLayoutGuide type="bottom" id="khH-OB-KpY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="l6z-5j-KDa">
+                                <rect key="frame" x="44" y="288" width="480" height="32"/>
+                            </adBannerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="l6z-5j-KDa" secondAttribute="trailing" constant="44" id="1jj-ia-Pop"/>
+                            <constraint firstItem="khH-OB-KpY" firstAttribute="top" secondItem="l6z-5j-KDa" secondAttribute="bottom" id="7wT-0z-g1S"/>
+                            <constraint firstItem="l6z-5j-KDa" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="44" id="AWs-fY-mGs"/>
+                            <constraint firstAttribute="centerX" secondItem="l6z-5j-KDa" secondAttribute="centerX" id="baQ-30-R0z"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="adBanner" destination="l6z-5j-KDa" id="Crv-yx-E5N"/>
+                        <segue destination="wJw-0q-fJL" kind="modal" identifier="tutorial_segue" id="0Zt-UT-vXt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7" y="263"/>
+        </scene>
+        <!--Tutorial View Controller-->
+        <scene sceneID="ocs-Zv-IbM">
+            <objects>
+                <viewController id="wJw-0q-fJL" customClass="TutorialViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vde-BY-Qnc"/>
+                        <viewControllerLayoutGuide type="bottom" id="fmY-df-PSf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Gw-9l-a9M">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEa-6h-FCQ">
+                                <rect key="frame" x="186" y="284" width="197" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="197" id="938-KW-DDJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="19"/>
+                                <state key="normal" title="Skip Tutorial">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="TVM-qT-0xm" kind="unwind" unwindAction="unwindToGame:" id="TQE-m7-LJR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.5728753306878307" green="0.31126675948181143" blue="0.17714414179170707" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="TEa-6h-FCQ" firstAttribute="bottom" secondItem="fmY-df-PSf" secondAttribute="top" id="J4Y-95-esg"/>
+                            <constraint firstItem="TEa-6h-FCQ" firstAttribute="centerX" secondItem="2Gw-9l-a9M" secondAttribute="centerX" id="QK0-fU-qkz"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="backButton" destination="TEa-6h-FCQ" id="18h-Ma-Bjq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tar-Bi-gGG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TVM-qT-0xm" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="648" y="263"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="zTP-Ee-Hc5">
+            <objects>
+                <viewController storyboardIdentifier="PageContentViewController" id="nOf-29-mIw" customClass="PageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3B8-cg-iHE"/>
+                        <viewControllerLayoutGuide type="bottom" id="dFh-wo-wLi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JAq-sI-jUW">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="s1.png" translatesAutoresizingMaskIntoConstraints="NO" id="jQ0-FX-J17">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jQ0-FX-J17" firstAttribute="top" secondItem="JAq-sI-jUW" secondAttribute="top" id="O3z-tN-wg7"/>
+                            <constraint firstItem="dFh-wo-wLi" firstAttribute="top" secondItem="jQ0-FX-J17" secondAttribute="bottom" id="bvG-YE-XON"/>
+                            <constraint firstItem="jQ0-FX-J17" firstAttribute="leading" secondItem="JAq-sI-jUW" secondAttribute="leading" id="g7j-iO-LM0"/>
+                            <constraint firstAttribute="trailing" secondItem="jQ0-FX-J17" secondAttribute="trailing" id="tGY-w7-WeK"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="jQ0-FX-J17" id="uxj-E0-drE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xXo-BR-bXn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1356" y="263"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="s1.png" width="2208" height="1242"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
